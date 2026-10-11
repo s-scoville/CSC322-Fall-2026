@@ -1,3 +1,28 @@
+:root {
+    /* Backgrounds */
+    --bg-primary: #10151e;
+    --bg-secondary: #1c2532;
+    --bg-tertiary: #283649;
+
+    /* Text */
+    --text-primary: #f0f3f8;
+    --text-secondary: #b5c2d3;
+    --text-muted: #94a3b8;
+
+    /* Accents */
+    --accent-primary: #78a6e8;
+    --accent-hover: #a1c4f4;
+
+    /* Borders */
+    --border-color: #303b4c;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
 .hero-portrait {
     width: 100%;
     max-width: 250px;
