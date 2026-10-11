@@ -225,3 +225,33 @@ main {
     color: var(--accent-hover);
     text-decoration: underline;
 }
+
+/* Mobile Layout */
+@media (max-width: 767.98px) {
+    .hero {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .hero h1 {
+        font-size: 1.85rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .hero-portrait {
+        max-width: 200px;
+    }
+
+    .featured-projects {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
