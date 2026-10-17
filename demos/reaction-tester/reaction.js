@@ -9,6 +9,10 @@ $(document).ready(function() {
     const lastTime = $("#lastTime");
     const bestTime = $("#bestTime");
 
+    if (!reactionArea.length) {
+        return;
+    }
+
     let gameState = "ready";
     let startTime = 0;
     let timeoutId = null;
