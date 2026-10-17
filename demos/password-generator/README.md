@@ -1,16 +1,38 @@
-# React + Vite
+# React Password Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A customizable password generator built with React 19 and Vite for my CSC322 Web Programming portfolio.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Generate random passwords between 8 and 32 characters.
+- Choose uppercase letters, lowercase letters, numbers, and symbols.
+- Include at least one character from each selected category.
+- Generate passwords using the browser's Web Crypto API.
+- Copy generated passwords to the clipboard.
+- Responsive interface with validation and status messages.
 
-## React Compiler
+## Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Install dependencies:
 
-## Expanding the Oxlint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Technologies
+
+- React 19
+- JavaScript (JSX)
+- Vite
+- HTML/CSS
+- Web Crypto API
+
+## Integration
+
+This application is located in `demos/password-generator/` and is intended to be included in the portfolio's JS Demos page.

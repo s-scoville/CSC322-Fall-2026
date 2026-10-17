@@ -94,7 +94,7 @@ function App() {
       </p>
 
       <div className="password-output">
-        <span id="generatedPassword">{password || 'Your password will appear here.'}</span>
+        <span id="generatedPassword" aria-live="polite">{password || 'Your password will appear here.'}</span>
         <button type="button"
                 onClick={copyPassword}
                 disabled={!password}

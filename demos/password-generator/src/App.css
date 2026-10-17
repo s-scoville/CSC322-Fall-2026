@@ -133,4 +133,16 @@ input[type="checkbox"] {
     .password-options {
         gap: 0.75rem;
     }
+
+    .password-header h1 {
+      font-size: 1.25rem;
+    }
+
+    .password-output {
+      flex-wrap: wrap;
+    }
+
+    .password-output span {
+      min-width: 0;
+    }
 }
