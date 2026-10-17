@@ -22,6 +22,11 @@ $(document).ready(function() {
         reactionInstructions.text(instructions);
 
         gameState = state;
+
+        startButton.prop("disabled", state === "waiting" || state === "go");
+
+        reactionArea.attr("aria-label", `${message} ${instructions}`);
+        reactionArea.attr("aria-disabled", state !== "waiting" && state !== "go");
     }
 
     function showReadyState() {
@@ -33,6 +38,10 @@ $(document).ready(function() {
     }
 
     function startTest() {
+        if (gameState === "waiting" || gameState === "go") {
+            return;
+        }
+
         clearTimeout(timeoutId);
 
         updateDisplay(
@@ -84,7 +93,7 @@ $(document).ready(function() {
             updateDisplay(
                 "ready",
                 `${reactionTime} ms`,
-                "Press Start to try again."
+                "Nice reaction! Press Start to try again."
             );
         }
     }
@@ -105,6 +114,12 @@ $(document).ready(function() {
     startButton.on("click", startTest);
     resetButton.on("click", resetTest);
     reactionArea.on("click", handleReactionClick);
+    reactionArea.on("keydown", function(event) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            handleReactionClick();
+        }
+    });
 
     showReadyState();
 });
