@@ -1,11 +1,13 @@
 .password-card {
   width: 100%;
   max-width: 650px;
-  margin: 2rem auto;
+  margin: 0;
   padding: 1.5rem;
   background: #1c2532;
   border-radius: 12px;
   border: 1px solid #303b4c;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 .password-header {
@@ -21,15 +23,16 @@
   font-size: 1.5rem;
 }
 
-.tech-badge {
+.password-card .tech-badge {
   padding: 0.35em 0.75em;
   border: 1px solid #303b4c;
   border-radius: 20px;
   color: #b5c2d3;
   font-size: 0.8rem;
+  font-variant: normal;
 }
 
-.description {
+.password-card .description {
   color: #b5c2d3;
   line-height: 1.6;
 }
@@ -62,9 +65,24 @@
   color: #b5c2d3;
 }
 
-input[type="range"] {
-  width: 100%;
+#passwordDemo .password-card input[type="range"] {
+  width: 100% !important;
   accent-color: #78a6e8;
+  cursor: pointer;
+  appearance: none;
+  height: 6px;
+  border-radius: 6px;
+  background: #303b4c;
+}
+
+#passwordDemo .password-card input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    border-radius: 50%;
+    background: #78a6e8;
+    cursor: pointer;
 }
 
 .password-options {
@@ -81,8 +99,30 @@ input[type="range"] {
   color: #b5c2d3;
 }
 
-input[type="checkbox"] {
-  accent-color: #78a6e8;
+#passwordDemo .password-card input[type="checkbox"] {
+  accent-color: #78a6e8 !important;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1px solid #78a6e8;
+  border-radius: 3px;
+  background: #10151e;
+  cursor: pointer;
+}
+
+#passwordDemo .password-card input[type="checkbox"]:checked {
+    background: #78a6e8;
+}
+
+#passwordDemo .password-card input[type="checkbox"]:checked::after {
+    content: "✓";
+    display: block;
+    color: #10151e;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 14px;
+    text-align: center;
 }
 
 .password-card button {
@@ -126,7 +166,7 @@ input[type="checkbox"] {
 
 @media (max-width: 480px) {
     .password-card {
-        margin: 1rem auto;
+        margin: 0;
         padding: 1rem;
     }
 
