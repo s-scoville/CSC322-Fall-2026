@@ -1,0 +1,195 @@
+:root {
+    /* Backgrounds */
+    --bg-primary: #10151e;
+    --bg-secondary: #1c2532;
+    --bg-tertiary: #283649;
+
+    /* Text */
+    --text-primary: #f0f3f8;
+    --text-secondary: #b5c2d3;
+    --text-muted: #94a3b8;
+
+    /* Accents */
+    --accent-primary: #78a6e8;
+    --accent-hover: #a1c4f4;
+
+    /* Borders */
+    --border-color: #303b4c;
+
+    /* Reaction States */
+    --reaction-ready: #283649;
+    --reaction-ready-border: #78a6e8;
+
+    --reaction-waiting: #493c2b;
+    --reaction-waiting-border: #b39863;
+
+    --reaction-go: #245044;
+    --reaction-go-border: #65b69b;
+
+    --reaction-early: #50353d;
+    --reaction-early-border: #bd7788;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 2rem 1rem;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: Arial, sans-serif;
+}
+
+.reaction-card {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-variant: small-caps;
+}
+
+.card-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.tech-badge {
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.reaction-area {
+    display: flex;
+    min-height: 200px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+    border: 2px solid var(--reaction-ready-border);
+    border-radius: 8px;
+    background: var(--reaction-ready);
+    transition: background-color 0.15s, border-color 0.15s;
+    user-select: none;
+}
+
+.reaction-area h2 {
+    margin: 0 0 0.5rem;
+    font-size: 2rem;
+}
+
+.reaction-area p {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.reaction-area.waiting {
+    background: var(--reaction-waiting);
+    border-color: var(--reaction-waiting-border);
+}
+
+.reaction-area.go {
+    background: var(--reaction-go);
+    border-color: var(--reaction-go-border);
+}
+
+.reaction-area.early {
+    background: var(--reaction-early);
+    border-color: var(--reaction-early-border);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.stat-box {
+    padding: 1rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.controls button {
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#startButton {
+    flex: 1;
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+.controls button:hover {
+    filter: brightness(1.12);
+}
+
+.controls button:focus-visible {
+    outline: 2px solid var(--accent-hover);
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    .reaction-card {
+        padding: 1rem;
+    }
+
+    .reaction-area {
+        min-height: 180px;
+    }
+
+    .reaction-area h2 {
+        font-size: 1.6rem;
+    }
+
+    .stat-value {
+        font-size: 1.25rem;
+    }
+}
