@@ -207,6 +207,23 @@ main {
     text-decoration: underline;
 }
 
+/* React CRUD Demo */
+.crud-demo {
+    height: 100%;
+    min-height: 650px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.crud-demo-frame {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    border: none;
+}
+
 /* Footer */
 .site-footer {
     background-color: var(--bg-secondary);
@@ -253,5 +270,23 @@ main {
     .featured-projects {
         padding-top: 2rem !important;
         padding-bottom: 2rem !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .featured-project-column > .row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        height: 100%;
+        margin: 0;
+        transform: translateY(-16px);
+    }
+
+    .featured-project-column > .row > [class*="col-"] {
+        width: 100%;
+        height: 100%;
+        padding: 0;
     }
 }
